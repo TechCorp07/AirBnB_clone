@@ -1,4 +1,4 @@
-Requirements - Python Scripts
+## Requirements - Python Scripts
 
 Allowed editors: vi, vim, emacs
 All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
@@ -13,7 +13,8 @@ All your classes should have a documentation (python3 -c 'print(__import__("my_m
 All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 
-##Python Unit Tests
+## Python Unit Tests
+
 All your files should end with a new line
 All your test files should be inside a folder tests
 You have to use the unittest module
@@ -28,13 +29,24 @@ All your modules should have a documentation (python3 -c 'print(__import__("my_m
 All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
 All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 
-SHELL Execution
+## SHELL Execution
 
 Your shell should work like this in interactive mode:
 $ ./console.py
+Display the help for a command | ```(hbnb) help <command>```
+Create an object (prints its id)| ```(hbnb) create <class>```
 (hbnb) help
 Documented commands (type help <topic>):
 ========================================
 
 EOF  help  quit
 (hbnb) quit
+  
+## Models
+
+[amenity.py](./models/amenity.py) | Amenity class for future amenity information | name
+[city.py](./models/city.py) | City class for future location information | state_id, name
+[state.py](./models/state.py) | State class for future location information | name
+
+ 
+
