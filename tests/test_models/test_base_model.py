@@ -3,13 +3,12 @@
 import unittest
 from unittest import mock
 import inspect
-import models
+from models.base_model import BaseModel
 from uuid import UUID, uuid4
 import pep8 as pycodestyle
 from datetime import datetime
-from time import sleep
-BaseModel = models.base_model.BaseModel
-module_doc = models.base_model.__doc__
+import time 
+module_doc = BaseModel.__doc__
 
 class TestBaseModelDocs(unittest.TestCase):
     """Tests to check the documentation and style of BaseModel class"""
