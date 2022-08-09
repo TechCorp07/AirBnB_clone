@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-''' module for Amenity class '''
-from .base_model import BaseModel
+"""
+Amenity class: Public class attributes:name: string - empty string.
+"""
+from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    ''' an Amenity class '''
-    name = ''
+    """
+    Inherits from BaseModel
+    Public class attribute:
+        name: (str)
+    """
+    name = ""
