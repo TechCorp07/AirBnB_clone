@@ -1,15 +1,21 @@
 #!/usr/bin/python3
-''' module for BaseModel class '''
+""" module for BaseModel class """
 
-import uuid
-import datetime
+from uuid import uuid4
+import models
+from datetime import datetime
 import engine.file_storage as storage
 
 
 class BaseModel:
-    ''' class of the base model of higher-level data models '''
+    """ class of the base model of higher-level data models """
     def __init__(self, *arg, **kwargs):
-        ''' BaseModel constructor '''
+        """Initialize a new BaseModel.
+
+        Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
+        """
         if kwargs:
             for k in kwargs:
                 if k in ['created_at', 'updated_at']:
@@ -23,12 +29,12 @@ class BaseModel:
             models.storage.new(self)
 
     def save(self):
-        ''' saves a model '''
+        """Update updated_at with the current datetime."""
         self.updated_at = datetime.today()
         models.storage.save()
 
     def to_dict(self):
-        ''' returns a dictionary representation of the model '''
+        """ returns a dictionary representation of the model """
         dct = self.__dict__.copy()
         dct['__class__'] = self.__class__.__name__
         dct['created_at'] = self.created_at.isoformat()
@@ -36,6 +42,6 @@ class BaseModel:
         return dct
 
     def __str__(self):
-        ''' returns a string representation of the model '''
-        return '[{}] ({}) {}'.format(
+        """ returns a string representation of the model """
+        return "[{}] ({}) {}".format(
             self.__class__.__name__, self.id, self.__dict__)
